@@ -1,0 +1,23 @@
+<div class="row" style="margin-top: 5%;">
+  <mat-card>
+    <mat-card-content>
+      <h2>Ajouter une vidéo</h2>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill">
+          <mat-label>Title</mat-label>
+          <input type="text" matInput formControlName="title" placeholder="Ex. Mon titre.">
+          <mat-error>
+            Le titre doit avoir plus de 8 caratères
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <ngx-mat-file-input formControlName="video" placeholder="Choisir une vidéo" ></ngx-mat-file-input>
+          <mat-error>
+            Le titre doit avoir plus de 8 caratères
+          </mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary" [disabled]="!form.valid">Ajouter</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

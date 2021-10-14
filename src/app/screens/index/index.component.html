@@ -1,0 +1,23 @@
+<table class="table" style="margin-top: 5%;">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Titre</th>
+      <th scope="col" *ngIf="user.isAuth">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let video of videos;let i = index "  style="vertical-align: middle;">
+      <th scope="row">{{i+1}}</th>
+      <td><a (click)="onShowVideo(video)">{{video.title}}</a></td>
+      <td *ngIf="(user.id == video.user_id)">
+        <button mat-icon-button color="accent" aria-label="Example icon button with a delete icon" style="margin-left: 5px;margin-right: 5px;" (click)="onEdit(video._id)" >
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" aria-label="Example icon button with a delete icon" style="margin-left: 5px;margin-right: 5px;" (click)="onDelete(video._id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

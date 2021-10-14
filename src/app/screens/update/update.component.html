@@ -1,0 +1,20 @@
+
+<div>
+  <mat-card>
+    <mat-card-content>
+      <h2>Modifier une vidéo</h2>
+      <form action="" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill">
+          <mat-label>Titre</mat-label>
+          <input type="text" matInput formControlName="title" placeholder="Ex. Mon titre">
+          <mat-error>Le titre doit avoir au moins 4 caractéres</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <ngx-mat-file-input formControlName="videoLink" placeholder="Choisir une vidéo"></ngx-mat-file-input>
+          <mat-error>Vous devez choisir une vidéo au format MP4</mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary" [disabled]="form.invalid">Enregistrer</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

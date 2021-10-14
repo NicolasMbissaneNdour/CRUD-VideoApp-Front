@@ -1,0 +1,21 @@
+<mat-toolbar color="primary"  style="width: auto">
+  <a class="col" style="color: #f8f9fa;text-decoration: none;font-weight: normal;font-size: medium;" routerLink="/" >VideosApp</a>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" *ngIf="user.isAuth" (click)="onIndex()">
+    <mat-icon>play_circle_outline</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" *ngIf="user.isAuth" (click)="onCreate()">
+    <mat-icon>add_circle_outline</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" *ngIf="user.isAuth" (click)="onLogout()">
+    <mat-icon>power_settings_new</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" *ngIf="!user.isAuth" (click)="onLogin()">
+    <mat-icon>login</mat-icon>
+  </button>
+  
+</mat-toolbar>
+<div class="container">
+  
+  <router-outlet></router-outlet>
+
+</div>

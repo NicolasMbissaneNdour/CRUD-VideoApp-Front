@@ -1,0 +1,29 @@
+<div class="row" style="margin-top: 5%;">
+  <mat-card>
+    <mat-card-content>
+      <h2>Connexion</h2>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Ex. user@gmail.com." formControlName="email">
+          <mat-error>
+            Entrer une addresse email valid SVP!
+          </mat-error>
+        </mat-form-field>
+        
+        <mat-form-field appearance="fill">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password">
+          <mat-error>
+            8 caractéres sont au moins requis!
+          </mat-error>
+        </mat-form-field>
+        
+        <button mat-raised-button color="primary" [disabled]="!form.valid">Connexion</button>
+        <a routerLink="/signup" style="margin-top: 15px;display: block;">Créer un compte?</a>
+
+      </form>
+    </mat-card-content>
+  </mat-card>
+  
+</div>

@@ -1,0 +1,47 @@
+<!-- <div class="container" style="margin-top: 5%;text-align: center;">
+  <video src="http://localhost:3000/videos/1111" type="video/mp4" width="75%"  controls crossorigin="anonymous" style="border: 1px black solid;margin: auto;"></video>
+</div> -->
+<div class="container">
+  <vg-player style="max-width: 800px;text-align: center;margin: auto;margin-top: 5%;">
+    <vg-overlay-play></vg-overlay-play>
+    <vg-buffering></vg-buffering>
+  
+    <vg-scrub-bar>
+      <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+      <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+    </vg-scrub-bar>
+  
+    <vg-controls>
+      <vg-play-pause></vg-play-pause>
+  
+      <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+  
+      <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
+  
+      <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>
+      <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+  
+      <vg-mute></vg-mute>
+      <vg-volume></vg-volume>
+  
+      <vg-fullscreen></vg-fullscreen>
+    </vg-controls>
+  
+    <video [vgMedia]="$any(media)" #media id="singleVideo" preload="auto" crossorigin>
+      <source [src]="'http://localhost:3000/videostream/'+id" type="video/mp4">
+  
+    </video>
+  </vg-player>
+  <div style="text-align: center;margin-top: 1%;">
+    <h2>{{video.title}}</h2>
+  </div>
+  <div style="text-align: center;margin: auto;" *ngIf="user.id == video.user_id">
+    <button mat-icon-button color="accent" aria-label="Example icon button with a delete icon" style="margin-left: 5px;margin-right: 5px;" (click)="onEdit()" >
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button mat-icon-button color="warn" aria-label="Example icon button with a delete icon" style="margin-left: 5px;margin-right: 5px;" (click)="onDelete()">
+      <mat-icon>delete</mat-icon>
+    </button>
+    
+  </div>
+</div>
